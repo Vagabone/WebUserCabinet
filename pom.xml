@@ -70,6 +70,13 @@
             <optional>true</optional>
         </dependency>
 
+        <!--    Mb in future will add connection pool to db
+                <dependency>
+                    <groupId>com.zaxxer</groupId>
+                    <artifactId>HikariCP</artifactId>
+                </dependency>
+        -->
+
     </dependencies>
 
     <build>
