@@ -5,8 +5,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@NamedNativeQuery(name = "MERCURY.TEC_CALL_VIEW", query = "SELECT * FROM MERCURY.TEC_CALL_VIEW", resultSetMapping = "tecCallViewMapping")
-//FILL QUERY
+@NamedNativeQuery(name = "TecCallView.findByLicenceIdAndCallCreateDateBetween",
+        query = "SELECT * FROM MERCURY.TEC_CALL_VIEW TCV WHERE TCV.LICENCEID = :licenceId AND TCV.CALLCREATEDATE BETWEEN :startDate AND :endDate",
+        resultSetMapping = "tecCallViewMapping")
 @SqlResultSetMapping(name = "tecCallViewMapping",
         entities = {
                 @EntityResult(entityClass = TecCallView.class, fields = {
