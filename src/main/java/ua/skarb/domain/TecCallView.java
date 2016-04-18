@@ -42,8 +42,8 @@ public class TecCallView implements Serializable {
     @Column(name = "PRIORITY", nullable = false)
     private String priority;
 
-    @Column(name = "ISCLOSED", nullable = false, length = 1)
-    private Integer isClosed;
+    @Column(name = "ISCLOSED", nullable = false)
+    private String isClosed;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "CALLDATE")
@@ -103,11 +103,11 @@ public class TecCallView implements Serializable {
         this.priority = priority;
     }
 
-    public Integer getIsClosed() {
+    public String getIsClosed() {
         return isClosed;
     }
 
-    public void setIsClosed(Integer isClosed) {
+    public void setIsClosed(String isClosed) {
         this.isClosed = isClosed;
     }
 
