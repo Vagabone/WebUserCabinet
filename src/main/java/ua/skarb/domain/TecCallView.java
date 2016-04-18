@@ -6,7 +6,10 @@ import java.util.Date;
 
 @Entity
 @NamedNativeQuery(name = "TecCallView.findByLicenceIdAndCallCreateDateBetween",
-        query = "SELECT * FROM MERCURY.TEC_CALL_VIEW TCV WHERE TCV.LICENCEID = :licenceId AND TCV.CALLCREATEDATE BETWEEN :startDate AND :endDate",
+        query = "SELECT * " +
+                "FROM MERCURY.TEC_CALL_VIEW TCV " +
+                "WHERE TCV.LICENCEID = :licenceId AND TCV.CALLCREATEDATE BETWEEN :startDate AND :endDate " +
+                "ORDER BY TCV.CALLCREATEDATE DESC",
         resultSetMapping = "tecCallViewMapping")
 @SqlResultSetMapping(name = "tecCallViewMapping",
         entities = {
@@ -132,11 +135,11 @@ public class TecCallView implements Serializable {
         this.firmName = firmName;
     }
 
-    public String getCallDesctiption() {
+    public String getCallDescription() {
         return callDescription;
     }
 
-    public void setCallDesctiption(String callDescription) {
+    public void setCallDescription(String callDescription) {
         this.callDescription = callDescription;
     }
 
@@ -175,7 +178,7 @@ public class TecCallView implements Serializable {
                 ", callDate=" + callDate +
                 ", callTime='" + callTime + '\'' +
                 ", firmName='" + firmName + '\'' +
-                ", callDesctiption='" + callDescription + '\'' +
+                ", callDescription='" + callDescription + '\'' +
                 ", callContacts='" + callContacts + '\'' +
                 ", callCreateDate=" + callCreateDate +
                 ", callCreateTime='" + callCreateTime + '\'' +

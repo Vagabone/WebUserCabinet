@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #ccff33;
+}
+
+.header-wrapper {
+    background-color: #ffcc00;
+    overflow: hidden;
+}
+
+#body-wrapper {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+ul.header-list li {
+    list-style-type: none;
+    display: inline;
+    float: right;
+    margin-right: 20px;
+    margin-top: 0px;
+    padding: 5px;
+}
+
+#float-clear {
+    float: none;
+}

@@ -22,13 +22,5 @@ public class WebUserCabinetApplication {
 
     public static void main(String[] args) throws ParseException {
         ApplicationContext ctx = SpringApplication.run(WebUserCabinetApplication.class, args);
-/*        for(String bean:ctx.getBeanDefinitionNames()){
-            System.out.println(bean);
-        }*/
-        TecCallViewRepository repo = (TecCallViewRepository) ctx.getBean("tecCallViewRepository");
-        //System.out.println(repo.findOne(34921).toString());
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        List<TecCallView> rez = repo.findByLicenceIdAndCallCreateDateBetween(2962, sdf.parse("01-01-2016"), sdf.parse("01-04-2016"));
-        rez.forEach(System.out::println);
     }
 }
