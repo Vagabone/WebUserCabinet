@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class TecCallService implements ITecCallService {
+public class TecCallViewService implements ITecCallViewService {
 
     @Autowired
     private TecCallViewRepository tecCallViewRepository;

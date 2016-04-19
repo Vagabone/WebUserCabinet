@@ -7,19 +7,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import ua.skarb.service.TecCallService;
+import ua.skarb.service.TecCallViewService;
 
 import java.util.Date;
-
-/**
- * Created by Admin on 18.04.2016.
- */
 
 @Controller
 public class TecCallController {
 
     @Autowired
-    TecCallService tecCallService;
+    TecCallViewService tecCallService;
 
     @RequestMapping(path = "/calls", method = RequestMethod.GET)
     public String getTecCallPage() {
@@ -31,7 +27,6 @@ public class TecCallController {
                                           @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,
                                           @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
                                           Model model) {
-        System.out.println(licenceId + "\n" + startDate + "\n" + endDate);
         model.addAttribute("tecCallList", tecCallService.getCallsByLicenceAndDatePeriod(licenceId, startDate, endDate));
         return "home";
     }
