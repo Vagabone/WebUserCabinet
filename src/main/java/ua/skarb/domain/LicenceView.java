@@ -1,7 +1,5 @@
 package ua.skarb.domain;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -13,6 +11,9 @@ public class LicenceView implements Serializable {
     @Id
     @Column(name = "ID", nullable = false)
     private Integer id;
+
+    @Column(name = "FIRMSID", nullable = false)
+    private Integer firmsId;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "BESTBEFORE")
@@ -289,10 +290,19 @@ public class LicenceView implements Serializable {
         this.tos = tos;
     }
 
+    public Integer getFirmsId() {
+        return firmsId;
+    }
+
+    public void setFirmsId(Integer firmsId) {
+        this.firmsId = firmsId;
+    }
+
     @Override
     public String toString() {
         return "LicenceView{" +
                 "id=" + id +
+                ", firmsId=" + firmsId +
                 ", bestBefore=" + bestBefore +
                 ", updateBefore=" + updateBefore +
                 ", createdBy='" + createdBy + '\'' +
