@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Особистий кабінет користувача</title>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/css/calls.css}"
+          href="../static/css/calls.css"/>
+</head>
+<body>
+<div id="body-wrapper">
+    <nav>
+        <div class="header-wrapper">
+            <ul class="header-list">
+                <a href="/"><li>Головна</li></a>
+                <a href="/info"><li>Довідка</li></a>
+                <a href="/contacts"><li>Контакти</li></a>
+            </ul>
+        </div>
+        <div id="float-clear"></div>
+    </nav>
+    <main>
+        <form method="POST" action="/calls" class="main-form">
+            <span><p>Айді ліцензії</p></span>
+            <input type="number" name="licenceId"/>
+            <span><p>Початкова дата</p></span>
+            <input type="date" name="startDate"/>
+            <span><p>Кінечна дата</p></span>
+            <input type="date" name="endDate"/>
+            <p><input type="submit"/></p>
+        </form>
+            <div th:if="${not #lists.isEmpty(tecCallList)}">
+                <h2 class="call-table-header">Дзвінки за період</h2>
+                <table class="main-call-table">
+                    <tr>
+                        <th>id</th>
+                        <th>Відповідальний</th>
+                        <th>Пріорітет</th>
+                        <th>Статус</th>
+                        <th>Дата дзвінка</th>
+                        <th>Час дзвінка</th>
+                        <th>Опис</th>
+                        <th>Контакти</th>
+                        <th>Дата створення дзвінка</th>
+                        <th>Час створення</th>
+                    </tr>
+                    <tr th:each="tecCall : ${tecCallList}">
+                        <td th:text="${tecCall.id}"></td>
+                        <td th:text="${tecCall.responsibleUser}"></td>
+                        <td th:text="${tecCall.priority}"></td>
+                        <td th:text="${tecCall.isClosed}"></td>
+                        <td th:text="${tecCall.callDate}"></td>
+                        <td th:text="${tecCall.callTime}"></td>
+                        <td th:text="${tecCall.callDescription}"></td>
+                        <td th:text="${tecCall.callContacts}"></td>
+                        <td th:text="${tecCall.callCreateDate}"></td>
+                        <td th:text="${tecCall.callCreateTime}"></td>
+                    </tr>
+                </table>
+            </div>
+    </main>
+    <footer>
+
+    </footer>
+</div>
+</body>
+</html>
