@@ -4,67 +4,44 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Особистий кабінет користувача</title>
+    <title>Головна сторінка</title>
     <link rel="stylesheet" type="text/css"
           th:href="@{/css/home.css}"
-          href="/css/home.css"/>
+          href="../static/css/home.css"/>
 </head>
 <body>
 <div id="body-wrapper">
-    <header>
+   <!-- <header>
         <div class="header-wrapper">
             <ul class="header-list">
-                <li>Головна</li>
-                <li>Довідка</li>
-                <li>Контакти</li>
+                <li>Увійти</li>
+                <li>Зареєструватись</li>
             </ul>
         </div>
         <div id="float-clear"></div>
     </header>
-    <main>
-        <form method="POST" action="/calls">
-            <span><p>Айді ліцензії</p></span>
-            <input type="number" name="licenceId"/>
-            <span><p>Початкова дата</p></span>
-            <input type="date" name="startDate"/>
-            <span><p>Кінечна дата</p></span>
-            <input type="date" name="endDate"/>
-            <p><input type="submit"/></p>
-        </form>
-        <div>
-            <div th:if="${not #lists.isEmpty(tecCallList)}">
-                <h2>Дзвінки за період</h2>
-                <table>
-                    <tr>
-                        <th>id</th>
-                        <th>responsibleUser</th>
-                        <th>priority</th>
-                        <th>isClosed</th>
-                        <th>callDate</th>
-                        <th>callTime</th>
-                        <th>callDescription</th>
-                        <th>callContacts</th>
-                        <th>callCreateDate</th>
-                        <th>callCreateTime</th>
-                    </tr>
-                    <tr th:each="tecCall : ${tecCallList}">
-                        <td th:text="${tecCall.id}"></td>
-                        <td th:text="${tecCall.responsibleUser}"></td>
-                        <td th:text="${tecCall.priority}"></td>
-                        <td th:text="${tecCall.isClosed}"></td>
-                        <td th:text="${tecCall.callDate}"></td>
-                        <td th:text="${tecCall.callTime}"></td>
-                        <td th:text="${tecCall.callDescription}"></td>
-                        <td th:text="${tecCall.callContacts}"></td>
-                        <td th:text="${tecCall.callCreateDate}"></td>
-                        <td th:text="${tecCall.callCreateTime}"></td>
-                    </tr>
-                </table>
-            </div>
+    -->
+    <nav class="footer_nav">
+         <div class="header-wrapper">
+            <ul class="header-list">
+                <a href="/login"><li>Увійти</li></a>
+                <a href="/registration"><li>Зареєструватись</li></a>
+            </ul>
         </div>
+        <div id="float-clear"></div>
+    </nav>
+    <main>
+    <aside>
+        <ul class="aside_menu">
+            <a href="/calls"><li>Здвінки</li></a>
+            <a href="/licence"><li>Ліцензія</li></a>
+            <a href="/firminfo"><li>Фірма</li></a>
+        </ul>
+    </aside>
+
     </main>
     <footer>
-
+        <p>Some text</p>
     </footer>
 </div>
 </body>

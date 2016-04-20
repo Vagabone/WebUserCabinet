@@ -19,7 +19,7 @@ public class TecCallController {
 
     @RequestMapping(path = "/calls", method = RequestMethod.GET)
     public String getTecCallPage() {
-        return "home";
+        return "calls";
     }
 
     @RequestMapping(path = "/calls", method = RequestMethod.POST)
@@ -28,6 +28,6 @@ public class TecCallController {
                                           @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
                                           Model model) {
         model.addAttribute("tecCallList", tecCallService.getCallsByLicenceAndDatePeriod(licenceId, startDate, endDate));
-        return "home";
+        return "calls";
     }
 }
