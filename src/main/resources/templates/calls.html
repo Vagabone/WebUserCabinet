@@ -26,9 +26,10 @@
             <span><p>Айді ліцензії</p></span>
             <input type="number" name="licenceId"/>
             <span><p>Початкова дата</p></span>
-            <input type="date" name="startDate"/>
+            <input type="date" name="startDate" required="required"/>
             <span><p>Кінечна дата</p></span>
-            <input type="date" name="endDate"/>
+            <input type="date" name="endDate" required="required"/>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
             <p><input type="submit"/></p>
         </form>
             <div th:if="${not #lists.isEmpty(tecCallList)}">

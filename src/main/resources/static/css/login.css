@@ -4,10 +4,10 @@
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-html,body {
+html, body {
     height: 100%;
     width: 100%;
-    background-color:#e6e6e6;
+    background-color: #e6e6e6;
 }
 
 .header-wrapper {
@@ -31,13 +31,15 @@ ul.header-list li {
     font-weight: bold;
 }
 
-ul li:hover{
+ul li:hover {
     background-color: #a6a6a6;
     color: #ffc34d;
 }
+
 #float-clear {
     float: none;
 }
+
 a:link, a:visited {
     text-decoration: none;
     color: black;
@@ -46,7 +48,7 @@ a:link, a:visited {
 main {
     background-color: #cccccc;
     height: 100%;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     width: 100%;
 }
 
@@ -54,12 +56,12 @@ nav {
     margin-bottom: 10px;
 }
 
-form{
+form {
     margin: 10px auto;
     width: 40%;
 }
 
-form.main-form input[type=date], input[type=number]{
+form.main-form input[type=text], input[type=password] {
     width: 70%;
     margin: 0px auto;
     display: block;
@@ -68,7 +70,8 @@ form.main-form input[type=date], input[type=number]{
     border: 2px solid black;
     font-size: 1.1em;
 }
-form.main-form span p{
+
+form.main-form span p {
     display: inline-block;
     width: 100%;
     text-align: center;
@@ -76,8 +79,8 @@ form.main-form span p{
     font-weight: bold;
 }
 
-form.main-form input[type=button], input[type=submit], input[type=reset]{
-    margin: 5px auto; 
+form.main-form input[type=button], input[type=submit], input[type=reset] {
+    margin: 5px auto;
     display: block;
     padding: 5px;
     font-size: 1.1em;
@@ -85,23 +88,7 @@ form.main-form input[type=button], input[type=submit], input[type=reset]{
     border: 2px solid black;
 }
 
-form.main-form input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
+form.main-form input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
     background-color: #a6a6a6;
     color: #ffc34d;
-}
-
-h2.call-table-header {
-    margin: 10px 20px;
-}
-
-table.main-call-table{
-    width: 98%;
-    margin: 10px auto;
-    border-collapse: collapse;
-}
-
-table.main-call-table th, td{
-    border: 2px solid black;
-    font-size: 0.8em;
-    padding: 4px;
 }
