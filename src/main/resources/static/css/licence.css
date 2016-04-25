@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #e6e6e6;
+}
+
+.header-wrapper {
+    background-color: #ffcc00;
+    overflow: hidden;
+}
+
+#body-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 0px;
+    height: 90%;
+}
+
+ul.header-list li {
+    list-style-type: none;
+    display: inline;
+    float: right;
+    margin: 10px 10px;
+    padding: 5px;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+ul li:hover {
+    background-color: #a6a6a6;
+    color: #ffc34d;
+}
+
+#float-clear {
+    float: none;
+}
+
+nav.footer_nav {
+    margin-bottom: 10px;
+}
+
+main {
+    background-color: #cccccc;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: table;
+    width: 100%;
+}
+
+aside {
+    display: table-cell;
+    width: 150px;
+    background-color: #a6a6a6;
+    #height: 100%;
+}
+
+ul.aside_menu li {
+    list-style-type: none;
+    margin: 10px 0px;
+    padding: 5px 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffc34d;
+}
+
+ul.aside_menu li:hover {
+    background-color: #269900;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+div.licence-info-folder {
+    width: 100%;
+    vertical-align: top;
+}
+
+div.licence-header-holder {
+    width: 100%;
+    margin: 10px;
+}
+
+div.licence-header-holder h2 h3 {
+    margin: 10px;
+}
+
+div.licence-contacts-folder {
+    border: 2px solid black;
+    margin: 10px;
+}
+
+h4.licence-contacts-header {
+    width: 155px;
+    margin-top: -10px;
+    margin-left: 10px;
+    padding-left: 5px;
+    background-color: #cccccc;
+}
+
+span.licence-contacts-span {
+    display: block;
+    margin: 5px;
+}
+
+h4.licence-contacts-header2 {
+    width: 200px;
+    margin-top: -10px;
+    margin-left: 10px;
+    padding-left: 5px;
+    background-color: #cccccc;
+}
+
+h4.licence-services-header {
+    margin: 10px;
+}
+
+table.license-services-table {
+    width: 98%;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+table.license-services-table td, th {
+    border: 2px solid black;
+    padding: 4px;
+}
+
+table.license-services-table td > input {
+    display: block;
+    margin: auto;
+}

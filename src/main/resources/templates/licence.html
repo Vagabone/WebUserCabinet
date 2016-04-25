@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ліцензія користувача</title>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/css/licence.css}"
+          href="../static/css/licence.css"/>
+</head>
+<body>
+<div id="body-wrapper">
+    <!-- <header>
+         <div class="header-wrapper">
+             <ul class="header-list">
+                 <li>Увійти</li>
+                 <li>Зареєструватись</li>
+             </ul>
+         </div>
+         <div id="float-clear"></div>
+     </header>
+     -->
+    <nav class="footer_nav">
+        <div class="header-wrapper">
+            <ul class="header-list">
+                <a href="/login">
+                    <li>Увійти</li>
+                </a>
+                <a href="/registration">
+                    <li>Зареєструватись</li>
+                </a>
+            </ul>
+        </div>
+        <div id="float-clear"></div>
+    </nav>
+    <main>
+        <aside>
+            <ul class="aside_menu">
+                <a href="/calls">
+                    <li>Дзвінки</li>
+                </a>
+                <a href="/licence">
+                    <li>Ліцензія</li>
+                </a>
+                <a href="/firminfo">
+                    <li>Фірма</li>
+                </a>
+            </ul>
+        </aside>
+        <div class="licence-info-folder">
+            <div class="licence-header-holder">
+                <h2>ID ліцензії: <span th:text="${licence.id}"></span></h2>
+            </div>
+
+            <div class="licence-contacts-folder">
+                <h4 class="licence-contacts-header">Параметри ліцензії</h4>
+                <span class="licence-contacts-span">Срок дії: <span th:text="${licence.bestBefore}"></span></span>
+                <span class="licence-contacts-span">Оновлення до: <span
+                        th:text="${licence.updateBefore}"></span> </span>
+                <span class="licence-contacts-span">Ким видана: <span th:text="${licence.createdBy}"></span> </span>
+                <span class="licence-contacts-span" th:if="${licence.debtExists}"><b>Борг</b>: <span
+                        th:text="${licence.debt}"></span> </span>
+            </div>
+
+            <div class="licence-contacts-folder">
+                <h4 class="licence-contacts-header2">База лікарських засобів</h4>
+                <span class="licence-contacts-span">Доступна до: <span
+                        th:text="${licence.blzMedSyncUpdateBefore}"></span></span>
+                <span class="licence-contacts-span">Режим доступу: <span th:text="${licence.blzMedSync}"></span></span>
+            </div>
+            <h4 class="licence-services-header">Сервіси:</h4>
+            <div class="licence-services-table">
+                <table class="license-services-table">
+                    <tr>
+                        <th>Назва</th>
+                        <th>Постійний</th>
+                    </tr>
+                    <tr>
+                        <td>Документообіг</td>
+                        <td><input type="checkbox" th:checked="${licence.docOborot}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Рецепти</td>
+                        <td><input type="checkbox" th:checked="${licence.receptu}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Роздріб</td>
+                        <td><input type="checkbox" th:checked="${licence.roznica}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Платежі</td>
+                        <td><input type="checkbox" th:checked="${licence.plateju}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Замовлення постачальникам</td>
+                        <td><input type="checkbox" th:checked="${licence.zakPotavcik}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Філіали</td>
+                        <td><input type="checkbox" th:checked="${licence.filialu}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Синхронізатор сервер</td>
+                        <td><input type="checkbox" th:checked="${licence.sincoServer}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Синхронізатор клієнт</td>
+                        <td><input type="checkbox" th:checked="${licence.sincoClient}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Сертифікати</td>
+                        <td><input type="checkbox" th:checked="${licence.sert}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Склад</td>
+                        <td><input type="checkbox" th:checked="${licence.sclad}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Виробництво</td>
+                        <td><input type="checkbox" th:checked="${licence.proizvodstvo}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Оптима вигрузка</td>
+                        <td><input type="checkbox" th:checked="${licence.optima}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>ГорСправка вигрузка</td>
+                        <td><input type="checkbox" th:checked="${licence.gorSpravka}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>M.E.Doc вигрузка</td>
+                        <td><input type="checkbox" th:checked="${licence.medoc}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Податкова звітність вигрузка</td>
+                        <td><input type="checkbox" th:checked="${licence.podatkova}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>БаДМ вигрузка</td>
+                        <td><input type="checkbox" th:checked="${licence.badm}" disabled="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>ТОС замовлення</td>
+                        <td><input type="checkbox" th:checked="${licence.tos}" disabled="true"/></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+    </main>
+    <footer>
+        <!--<p>Some text</p>-->
+    </footer>
+</div>
+</body>
+</html>

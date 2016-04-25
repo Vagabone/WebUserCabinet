@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Головна сторінка</title>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/css/firminfo.css}"
+          href="../static/css/firminfo.css"/>
+</head>
+<body>
+<div id="body-wrapper">
+    <!-- <header>
+         <div class="header-wrapper">
+             <ul class="header-list">
+                 <li>Увійти</li>
+                 <li>Зареєструватись</li>
+             </ul>
+         </div>
+         <div id="float-clear"></div>
+     </header>
+     -->
+    <nav class="footer_nav">
+        <div class="header-wrapper">
+            <ul class="header-list">
+                <a href="/login">
+                    <li>Увійти</li>
+                </a>
+                <a href="/registration">
+                    <li>Зареєструватись</li>
+                </a>
+            </ul>
+        </div>
+        <div id="float-clear"></div>
+    </nav>
+    <main>
+        <aside>
+            <ul class="aside_menu">
+                <a href="/calls">
+                    <li>Дзвінки</li>
+                </a>
+                <a href="/licence">
+                    <li>Ліцензія</li>
+                </a>
+                <a href="/firminfo">
+                    <li>Фірма</li>
+                </a>
+            </ul>
+        </aside>
+        <div class="firm-info-folder">
+            <div class="firm-header-holder">
+                <h2 th:text="${firm.name}"></h2>
+                <h3 th:text="${firm.address}"></h3>
+            </div>
+
+            <div class="firm-contacts-folder">
+                <h4 class="firm-contacts-header">Контакти</h4>
+                <span class="firm-contacts-span">Поштова адреса: <span th:text="${firm.address}"></span></span>
+                <span class="firm-contacts-span">email: <span th:text="${firm.email1}"></span></span>
+                <span class="firm-contacts-span">Додаткова адреса: <span th:text="${firm.email2}"></span></span>
+                <span class="firm-contacts-span">Телефон: <span th:text="${firm.phone}"></span></span>
+                <span class="firm-contacts-span">Факс: <span th:text="${firm.fax}"></span></span>
+                <span class="firm-contacts-span">Web-сайт: <span th:text="${firm.webAddress}"></span></span>
+                <span class="firm-contacts-span">Коментар: <span th:text="${firm.emailComments}"></span></span>
+            </div>
+
+            <div class="firm-contacts-folder">
+                <h4 class="firm-contacts-header2">Контактні особи</h4>
+                <span class="firm-contacts-span">ПІБ директора: <span th:text="${firm.directorFIO}"></span></span>
+                <span class="firm-contacts-span">Телефон директора: <span th:text="${firm.directorPhone}"></span></span>
+                <span class="firm-contacts-span">ПІБ контактної особи: <span th:text="${firm.contactFIO}"></span></span>
+                <span class="firm-contacts-span">Посада контактної особи: <span
+                        th:text="${firm.contactPost}"></span></span>
+                <span class="firm-contacts-span">Телефон контактної особи: <span th:text="${firm.contactPhone}"></span></span>
+                <span class="firm-contacts-span">e-mail контактної особи: <span
+                        th:text="${firm.contactEmail}"></span></span>
+
+            </div>
+
+            <div class="firm-contacts-folder">
+                <h4 class="firm-contacts-header">Реквізити</h4>
+                <span class="firm-contacts-span">Юридична назва компанії: <span
+                        th:text="${firm.fullName}"></span></span>
+                <span class="firm-contacts-span">Юридична адреса: <span th:text="${firm.address}"></span></span>
+                <span class="firm-contacts-span">№ свідотства платника НДВ: <span
+                        th:text="${firm.taxSertNo}"></span></span>
+                <span class="firm-contacts-span">ИНН: <span th:text="${firm.taxidNo}"></span></span>
+                <span class="firm-contacts-span">ЕДРПОУ: <span th:text="${firm.okpo}"></span></span>
+            </div>
+        </div>
+
+
+    </main>
+    <footer>
+        <!--<p>Some text</p>-->
+    </footer>
+</div>
+</body>
+</html>

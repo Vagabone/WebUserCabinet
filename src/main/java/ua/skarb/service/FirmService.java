@@ -16,4 +16,9 @@ public class FirmService implements IFirmService {
     public Firm getFirmByLicence(LicenceView licenceView) {
         return firmRepository.findOne(licenceView.getFirmsId());
     }
+
+    @Override
+    public Firm getFirmById(Integer id) {
+        return firmRepository.findOne(id);
+    }
 }
