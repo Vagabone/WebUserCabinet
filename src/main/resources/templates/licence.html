@@ -71,7 +71,7 @@
             </div>
             <h4 class="licence-services-header">Сервіси:</h4>
             <div class="licence-services-table">
-                <table class="license-services-table">
+                <table class="licence-services-table">
                     <tr>
                         <th>Назва</th>
                         <th>Постійний</th>
@@ -145,6 +145,24 @@
                         <td><input type="checkbox" th:checked="${licence.tos}" disabled="true"/></td>
                     </tr>
                 </table>
+            </div>
+            <h4 class="licence-services-header">Робочі місця:</h4>
+            <div class="licence-licenceUsers-table">
+                <table class="licence-licenceUsers-table">
+                    <tr>
+                        <th>№</th>
+                        <th>Тип РРО</th>
+                        <th>№ РРО</th>
+                        <th>Тестовий</th>
+                    </tr>
+                    <tr th:each="licenceUser, count : ${licenceUsers}" th:unless="${#lists.isEmpty(licenceUsers)}">
+                        <td th:text="${count.count}"></td>
+                        <td th:text="${licenceUser.registrator}"></td>
+                        <td th:text="${licenceUser.registratorSN}"></td>
+                        <td><input type="checkbox" th:checked="${licenceUser.isTest}" disabled="true"/></td>
+                    </tr>
+                </table>
+
             </div>
 
         </div>

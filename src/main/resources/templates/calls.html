@@ -8,6 +8,28 @@
     <link rel="stylesheet" type="text/css"
           th:href="@{/css/calls.css}"
           href="../static/css/calls.css"/>
+    <!-- <script  th:src="@{/js/js-webshim/minified/polyfiller.js}"
+              src="../static/js/js-webshim/minified/polyfiller.js"></script>
+     <script>
+         webshims.setOptions('forms-ext', {types: 'date'});
+         webshims.polyfill('forms forms-ext');
+     </script>
+ -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+    <script>
+        webshims.setOptions('forms-ext', {types: 'date'});
+        webshims.polyfill('forms forms-ext');
+        $.webshims.formcfg = {
+            ru: {
+                dFormat: '-',
+                dateSigns: '-',
+                patterns: {
+                    d: "yy-mm-dd"
+                }
+            }
+        };
+    </script>
 </head>
 <body>
 <div id="body-wrapper">
@@ -24,13 +46,13 @@
     <main>
         <form method="POST" action="/calls" class="main-form">
             <span><p>Айді ліцензії</p></span>
-            <input type="number" name="licenceId"/>
+            <input class="form-date-input" type="number" name="licenceId" required="required"/>
             <span><p>Початкова дата</p></span>
-            <input type="date" name="startDate" required="required"/>
+            <input class="form-date-input" type="date" name="startDate" required="required"/>
             <span><p>Кінечна дата</p></span>
-            <input type="date" name="endDate" required="required"/>
+            <input class="form-date-input" type="date" name="endDate" required="required"/>
             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-            <p><input type="submit"/></p>
+            <p><input class="form-date-input" type="submit"/></p>
         </form>
             <div th:if="${not #lists.isEmpty(tecCallList)}">
                 <h2 class="call-table-header">Дзвінки за період</h2>

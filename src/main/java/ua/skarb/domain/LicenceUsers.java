@@ -102,11 +102,11 @@ public class LicenceUsers implements Serializable {
         this.updateDate = updateDate;
     }
 
-    public Boolean getTest() {
+    public Boolean getIsTest() {
         return isTest;
     }
 
-    public void setTest(Boolean test) {
+    public void setIsTest(Boolean test) {
         isTest = test;
     }
 

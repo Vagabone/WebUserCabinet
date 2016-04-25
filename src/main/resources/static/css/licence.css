@@ -123,18 +123,34 @@ h4.licence-services-header {
     margin: 10px;
 }
 
-table.license-services-table {
+table.licence-services-table {
     width: 98%;
     margin: 10px auto;
     border-collapse: collapse;
 }
 
-table.license-services-table td, th {
+table.licence-services-table td, th {
     border: 2px solid black;
     padding: 4px;
 }
 
-table.license-services-table td > input {
+table.licence-services-table td > input {
+    display: block;
+    margin: auto;
+}
+
+table.licence-licenceUsers-table {
+    width: 98%;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+table.licence-licenceUsers-table td, th {
+    border: 2px solid black;
+    padding: 4px;
+}
+
+table.licence-licenceUsers-table td > input {
     display: block;
     margin: auto;
 }
